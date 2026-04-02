@@ -1,7 +1,23 @@
 {
   "permissions": {
     "allow": [
-      "Bash(npx playwright:*)"
+      "Bash(npx playwright:*)",
+      "WebFetch(domain:sme-business-web.vercel.app)",
+      "Bash(gh api:*)",
+      "Bash(where gh:*)",
+      "Bash(cmd.exe /c \"where gh\")",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" --version)",
+      "Bash(\"/c/Program Files \\(x86\\)/GitHub CLI/gh.exe\" --version)",
+      "Read(//c/Users/**)",
+      "Bash(cmd.exe /c \"gh --version\")",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(powershell.exe -Command \"Get-Command gh -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Source\")",
+      "Bash(powershell.exe -Command \"winget install GitHub.cli --accept-package-agreements --accept-source-agreements\")",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" auth status)",
+      "Bash(powershell.exe -Command \"\\(Get-Command gh -ErrorAction SilentlyContinue\\).Source\")",
+      "Bash(git config:*)",
+      "Bash(git clone:*)"
     ]
   }
 }
