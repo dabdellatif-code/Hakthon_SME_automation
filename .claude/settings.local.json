@@ -24,7 +24,10 @@
       "Bash(python \"C:\\\\Users\\\\Doaa\\\\AppData\\\\Roaming\\\\Claude\\\\local-agent-mode-sessions\\\\skills-plugin\\\\63450226-340b-4308-8a32-59f039e93d46\\\\054eceba-5471-48a9-b6ef-8b2e3188d04b\\\\skills\\\\docx\\\\scripts\\\\office\\\\validate.py\" \"C:\\\\SME_Shory\\\\docs\\\\Bug_Report_Shory_SME.docx\")",
       "Bash(pip install:*)",
       "Bash(node docs/generate-test-cases-doc.js)",
-      "Bash(ls -la C:/SME_Shory/docs/*.docx)"
+      "Bash(ls -la C:/SME_Shory/docs/*.docx)",
+      "Bash(node -e \":*)",
+      "Bash(node docs/generate-md-files.js)",
+      "Bash(ls -la C:/SME_Shory/docs/*.md)"
     ]
   }
 }
