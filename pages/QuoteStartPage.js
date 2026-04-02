@@ -5,7 +5,7 @@ class QuoteStartPage extends BasePage {
     super(page);
 
     // Step indicator
-    this.stepIndicator = page.getByText(/Step 1 of 7/i);
+    this.stepIndicator = page.getByText(/Step 1 of 6/i);
 
     // Method selection cards
     this.aiAdvisorCard = page.getByRole('link', { name: /AI Advisor/i });
@@ -15,6 +15,7 @@ class QuoteStartPage extends BasePage {
 
     // Badges
     this.recommendedBadge = page.getByText(/recommended/i).first();
+    this.fastestBadge = page.getByText(/fastest/i).first();
   }
 
   async open() {
@@ -46,10 +47,6 @@ class QuoteStartPage extends BasePage {
     await this.preConfiguredCard.waitFor({ state: 'visible' });
     await this.uploadLicenceCard.waitFor({ state: 'visible' });
     await this.fillManuallyCard.waitFor({ state: 'visible' });
-  }
-
-  async getStepText() {
-    return await this.stepIndicator.textContent();
   }
 }
 

@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const HomePage = require('../pages/HomePage');
 
-test.describe('Homepage', () => {
+test.describe('Scenario 1: Homepage & Navigation', () => {
   let homePage;
 
   test.beforeEach(async ({ page }) => {
@@ -9,29 +9,26 @@ test.describe('Homepage', () => {
     await homePage.open();
   });
 
-  test('should display homepage with hero section', async () => {
+  test('1.1 - should display hero section with heading', async () => {
     await expect(homePage.heroHeading).toBeVisible();
   });
 
-  test('should display Personal and Business navigation links', async () => {
-    await expect(homePage.personalLink).toBeVisible();
-    await expect(homePage.businessLink).toBeVisible();
-  });
-
-  test('should display SME Business Insurance section', async () => {
+  test('1.2 - should display SME Business Insurance card', async () => {
     await expect(homePage.smeBusinessInsuranceCard).toBeVisible();
+    await expect(homePage.getAQuoteButton).toBeVisible();
   });
 
-  test('should navigate to quote start when clicking Get a quote', async ({ page }) => {
+  test('1.3 - should navigate to quote start when clicking Get a quote', async ({ page }) => {
     await homePage.clickGetAQuote();
     await expect(page).toHaveURL(/\/quote\/start/);
   });
 
-  test('should display Get started button', async () => {
-    await expect(homePage.getStartedButton).toBeVisible();
+  test('1.4 - should display navigation elements', async () => {
+    await expect(homePage.logo).toBeVisible();
+    await expect(homePage.languageToggle).toBeVisible();
   });
 
-  test('should display Shory logo in header', async () => {
-    await expect(homePage.logo).toBeVisible();
+  test('1.5 - should display trust indicators', async () => {
+    await expect(homePage.trustBadge).toBeVisible();
   });
 });
