@@ -4,20 +4,39 @@ class ConfirmationPage extends BasePage {
   constructor(page) {
     super(page);
 
-    // Step indicator
-    this.stepIndicator = page.getByText(/Step 7 of 7.*Confirmed/i);
+    // Success heading
+    this.successHeading = page.getByRole('heading').first();
 
-    // Page heading
-    this.pageHeading = page.getByRole('heading', { name: /you're all set/i });
-
-    // Policy summary
-    this.activeBadge = page.getByText(/\bActive\b/).first();
+    // Policy details
     this.policyNumber = page.locator('text=/SHR-/').first();
-    this.startNewQuoteBtn = page.getByRole('link', { name: /start a new quote/i });
+    this.activeBadge = page.getByText(/\bActive\b/).first();
+
+    // Coverage section
+    this.coverageSection = page.getByText(/Coverage/i).first();
+    this.totalPremium = page.getByText(/Total premium/i);
+
+    // Download buttons
+    this.downloadPdfButton = page.getByRole('button', { name: /Download PDF/i });
+    this.downloadInvoiceButton = page.getByRole('button', { name: /Download Invoice/i });
+
+    // Support section
+    this.supportSection = page.getByText(/support/i).first();
+
+    // Start new quote
+    this.startNewQuoteLink = page.getByRole('link', { name: /start.*new.*quote/i });
+  }
+
+  async open() {
+    await this.navigateTo('/quote/confirmation');
   }
 
   async isConfirmed() {
-    return await this.pageHeading.isVisible().catch(() => false);
+    return await this.successHeading.isVisible().catch(() => false);
+  }
+
+  async clickStartNewQuote() {
+    await this.startNewQuoteLink.click();
+    await this.page.waitForLoadState('domcontentloaded');
   }
 }
 

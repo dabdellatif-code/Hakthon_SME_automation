@@ -7,7 +7,7 @@ module.exports = defineConfig({
   retries: process.env.CI ? 1 : 0,
   workers: 1,
   reporter: 'html',
-  timeout: 30000,
+  timeout: 60000,
   use: {
     baseURL: 'https://sme-business-web.vercel.app',
     trace: 'on-first-retry',

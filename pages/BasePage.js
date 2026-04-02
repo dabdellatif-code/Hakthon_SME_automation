@@ -3,12 +3,12 @@ class BasePage {
     this.page = page;
 
     // Header elements
-    this.logo = page.getByRole('link', { name: /shory/i }).first();
+    this.logo = page.locator('a[href="/"]').first();
     this.navPersonal = page.getByRole('link', { name: /personal/i }).first();
     this.navBusiness = page.getByRole('link', { name: /business/i }).first();
     this.navCompany = page.getByRole('link', { name: /company/i }).first();
     this.navHelp = page.getByRole('link', { name: /help/i }).first();
-    this.languageToggle = page.getByRole('link', { name: /عربي/i }).first();
+    this.languageToggle = page.getByText(/عربي/i).first();
   }
 
   async navigateTo(path) {
@@ -23,8 +23,8 @@ class BasePage {
     return await this.page.title();
   }
 
-  async switchToArabic() {
-    await this.languageToggle.click();
+  async getCurrentUrl() {
+    return this.page.url();
   }
 }
 
