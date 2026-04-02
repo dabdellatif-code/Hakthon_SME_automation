@@ -1,0 +1,20 @@
+{
+  "name": "sme-shory-playwright-tests",
+  "version": "1.0.0",
+  "description": "Playwright E2E tests for Shory SME Business Insurance",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:ui": "npx playwright test --ui",
+    "test:debug": "npx playwright test --debug",
+    "test:homepage": "npx playwright test tests/homepage.spec.js",
+    "test:ai-advisor": "npx playwright test tests/aiAdvisorJourney.spec.js",
+    "test:manual": "npx playwright test tests/manualFormJourney.spec.js",
+    "test:upload": "npx playwright test tests/uploadLicenceJourney.spec.js",
+    "test:e2e": "npx playwright test tests/e2eJourney.spec.js",
+    "report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}
