@@ -17,7 +17,14 @@
       "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" auth status)",
       "Bash(powershell.exe -Command \"\\(Get-Command gh -ErrorAction SilentlyContinue\\).Source\")",
       "Bash(git config:*)",
-      "Bash(git clone:*)"
+      "Bash(git clone:*)",
+      "Bash(npm list:*)",
+      "Bash(npm install:*)",
+      "Bash(node docs/generate-bug-report.js)",
+      "Bash(python \"C:\\\\Users\\\\Doaa\\\\AppData\\\\Roaming\\\\Claude\\\\local-agent-mode-sessions\\\\skills-plugin\\\\63450226-340b-4308-8a32-59f039e93d46\\\\054eceba-5471-48a9-b6ef-8b2e3188d04b\\\\skills\\\\docx\\\\scripts\\\\office\\\\validate.py\" \"C:\\\\SME_Shory\\\\docs\\\\Bug_Report_Shory_SME.docx\")",
+      "Bash(pip install:*)",
+      "Bash(node docs/generate-test-cases-doc.js)",
+      "Bash(ls -la C:/SME_Shory/docs/*.docx)"
     ]
   }
 }
